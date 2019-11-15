@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/07/24 22:24:45 by an.dmitriy9       #+#    #+#             */
+/*   Updated: 2019/11/14 10:49:07 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
-{
-	int nbr;
-	int sign;
+#include <unistd.h>
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		nbr++;
-	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+int     main(int ac, char **av)
+{
+    int i;
+
+    i = 0;
+    if (ac != 2)
+    {
+        write(1, "a\n", 2);
+        return (0);
+    }
+    while (av[1][i])
+    {
+        if (av[1][i] == 'a')
+        {
+            write(1, "a", 1);
+            break;
+        }
+        i++;
+    }
+    write(1, "\n", 1);
+    return (0);
 }

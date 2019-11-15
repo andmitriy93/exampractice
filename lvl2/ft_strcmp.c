@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/07/24 22:10:26 by an.dmitriy9       #+#    #+#             */
+/*   Updated: 2019/11/14 10:50:34 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
-{
-	int nbr;
-	int sign;
+#include <unistd.h>
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		nbr++;
-	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+int     ft_strcmp(char *s1, char *s2)
+{
+    int i;
+
+    i = 0;
+    while (s1[i] != '\0' && s2[i] != '\0')
+    {
+        if (s1[i] != s2[i])
+            return (s1[i] - s2[i]);
+        i++;
+    }
+    if ((s1[i] == '\0' && s2[i] != '\0') || (s1[i] != '\0' && s2[i] == '\0'))
+        return (s1[i] - s2[i]);
+    return (0);
 }
+

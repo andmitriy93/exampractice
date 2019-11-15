@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/07/24 22:24:58 by an.dmitriy9       #+#    #+#             */
+/*   Updated: 2019/11/14 20:20:11 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
-{
-	int nbr;
-	int sign;
+#include <stdio.h>
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		nbr++;
-	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+int     max(int* tab, unsigned int len)
+{
+    int             max;
+    unsigned int    i;
+
+    if (len == 0)
+        return (0);
+    i = 1;
+    max = tab[0];
+    while (i < len)
+    {
+        if (max < tab[i])
+            max = tab[i];
+        i++;
+    }
+    return (max)
 }

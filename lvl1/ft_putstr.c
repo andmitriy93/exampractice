@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/07/18 21:36:40 by an.dmitriy9       #+#    #+#             */
+/*   Updated: 2019/11/14 10:49:51 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
-{
-	int nbr;
-	int sign;
+#include <unistd.h>
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		nbr++;
-	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+void    ft_putstr(char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        write(1, str[i], 1);
+        i++;
+    }
 }

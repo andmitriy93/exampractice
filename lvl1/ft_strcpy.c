@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/11/14 10:49:54 by dmian             #+#    #+#             */
+/*   Updated: 2019/11/14 10:49:54 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
+char    *ft_strcpy(char *s1, char *s2)
 {
-	int nbr;
-	int sign;
+    int i;
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
-	{
-		sign = -1;
-		nbr++;
-	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+    i = 0;
+    while (s2[i])
+    {
+        s1[i] = s2[i];
+        i++;
+    }
+    s1[i] = s2[i];
+    return (s1);
 }

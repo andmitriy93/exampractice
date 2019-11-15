@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/11/14 09:25:28 by dmian             #+#    #+#             */
+/*   Updated: 2019/11/14 09:31:38 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
-{
-	int nbr;
-	int sign;
+#include <unistd.h>
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
+void	ft_putnbr(int n)
+{
+	char c;
+
+	if (n >= 10)
+		ft_putnbr(n / 10);
+	c = (n % 10) + '0';
+	write(1, &c, 1);
+}
+
+int		main()
+{
+	int i;
+
+	i = 1;
+	while (i <= 100)
 	{
-		sign = -1;
-		nbr++;
+		if (i % 15 == 0)
+			write(1, "fizzbuzz", 9);
+		else if (i % 3 == 0)
+			write(1, "fizz", 4);
+		else if (i % 5 == 0)
+			write(1, "buzz", 4);
+		else
+			ft_putnbr(i);
+		write(1, "\n", 1);
+		i++;
 	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+	return (0);
 }

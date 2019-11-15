@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   camel_to_snake.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/11/14 16:41:48 by dmian             #+#    #+#             */
+/*   Updated: 2019/11/14 16:47:40 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
-{
-	int nbr;
-	int sign;
+#include <unistd.h>
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
+void	camel_to_snake(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		sign = -1;
-		nbr++;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+		{
+			write(1, "_", 1);
+			str[i] = str[i] + 32;
+		}
+		write(1, &str[i], 1);
+		i++;
 	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+}
+
+int main(int ac, char **av)
+{
+	if (ac == 2)
+		camel_to_snake(av[1]);
+	write(1, "\n", 1);
+	return (0);
 }
