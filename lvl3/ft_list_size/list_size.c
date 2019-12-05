@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   list_size.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 12:59:51 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/25 13:18:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/11/25 16:35:06 by dmian             #+#    #+#             */
+/*   Updated: 2019/11/25 16:39:53 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_list.h"
 
-int		ft_strlen(char *str)
+int     ft_list_size(t_list *begin_list)
 {
-	int i = 0;
+    int size = 0;
 
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char		*ft_strdup(char *src)
-{
-	int i = 0;
-	int len = ft_strlen(src);
-	char *new = malloc(sizeof(char) * (len + 1));
-
-	while (src[i] != '\0')
-	{
-		new[i] = src[i];
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
+    while (begin_list != NULL)
+    {
+        begin_list = begin_list->next;
+        size++;
+    }
+    return (size);
 }

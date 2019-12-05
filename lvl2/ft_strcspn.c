@@ -6,7 +6,7 @@
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 14:01:09 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:50:37 by dmian            ###   ########.fr       */
+/*   Updated: 2019/11/25 12:59:10 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 
 size_t		ft_strcspn(const char *s, const char *charset)
 {
-	size_t i;
-	size_t j;
+	size_t i - 0;
+	size_t j = 0;
 
-	i = 0;
-	j = 0;
 	while (s[i] != '\0')
 	{
 		j = 0;

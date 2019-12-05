@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   paramsum.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 12:59:51 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/25 13:18:19 by dmian            ###   ########.fr       */
+/*   Created: 2019/11/19 09:49:06 by dmian             #+#    #+#             */
+/*   Updated: 2019/11/19 13:28:22 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-int		ft_strlen(char *str)
+void    ft_putchar(char c)
 {
-	int i = 0;
-
-	while (str[i] != '\0')
-		i++;
-	return (i);
+    write(1, &c, 1);
 }
 
-char		*ft_strdup(char *src)
+void    ft_putnbr(int nb)
 {
-	int i = 0;
-	int len = ft_strlen(src);
-	char *new = malloc(sizeof(char) * (len + 1));
+    if (nb > 9)
+        ft_putnbr(nb / 10);
+    ft_putchar(nb % 10 + '0');
+}
 
-	while (src[i] != '\0')
-	{
-		new[i] = src[i];
-		i++;
-	}
-	new[i] = '\0';
-	return (new);
+int     main(int ac, char **av)
+{
+    av = 0;
+    ft_putnbr(ac - 1);
+    write(1, "\n", 1);
+    return (0);
 }

@@ -6,30 +6,29 @@
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 10:44:25 by dmian             #+#    #+#             */
-/*   Updated: 2019/11/14 10:59:19 by dmian            ###   ########.fr       */
+/*   Updated: 2019/11/27 12:40:44 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		atoi(const char *str)
-{
-	int nbr;
-	int sign;
+#include <stdlib.h>
 
-	nbr = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-')
+int		*ft_range(int start, int end)
+{
+	int i = 0;
+	int *range;
+
+	if (start > end)
+		range = (int *)malloc(sizeof(int) * (start - end + 1));
+	else
+		range = (int*)malloc(sizeof(int) * (end - start + 1));
+	while (start != end)
 	{
-		sign = -1;
-		nbr++;
+		range[i++] = start;
+		if (start < end)
+			start++;
+		else
+			start--;
 	}
-	if (*str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		nbr = nbr * 10 + *str - 48;
-		nbr++;
-	}
-	return (sing * nbr);
+	range[i] = start;
+	return (range);
 }

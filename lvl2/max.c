@@ -6,7 +6,7 @@
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:24:58 by an.dmitriy9       #+#    #+#             */
-/*   Updated: 2019/11/14 20:20:11 by dmian            ###   ########.fr       */
+/*   Updated: 2019/11/21 20:54:51 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int     max(int* tab, unsigned int len)
             max = tab[i];
         i++;
     }
-    return (max)
+    return (max);
 }

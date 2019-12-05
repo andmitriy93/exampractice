@@ -6,7 +6,7 @@
 /*   By: dmian <dmian@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 22:24:52 by an.dmitriy9       #+#    #+#             */
-/*   Updated: 2019/11/14 12:58:27 by dmian            ###   ########.fr       */
+/*   Updated: 2019/11/23 16:13:58 by dmian            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	solve(char *str1, char *str2)
 	{
 		if (ascii[(int)str1[i]] == 1)
 		{
-			ascii[(int)str1[i]] == 2;
+			ascii[(int)str1[i]] = 2;
 			write(1, &str1[i], 1);
 		}
 		i++;
